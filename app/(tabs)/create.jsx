@@ -18,7 +18,7 @@ const Create = () => {
     title: "",
     video: null,
     thumbnail: null,
-    prompt: ''
+    prompt: ""
   })
 
   const openPicker = async (selectType) => {
@@ -41,21 +41,14 @@ const Create = () => {
   
 
   const submit = async () => {
-    if(!form.prompt || !form.title || !form.thumbnail || !form.video) {
+    if(form.prompt === "" || form.title === "" || !form.thumbnail || !form.video) {
       return Alert.alert("Please fill in all the fields")
     }
 
     setUploading(true)
 
     try {
-      await createVideo({
-        ...form,
-        userId: user.$id
-      },
-      console.log('FORM', form)
-    )
-
-
+      await createVideo({ ...form, userId: user.$id })
       Alert.alert("Success", 'Post uploaded successfully')
       router.push("/home")
     } catch (error) {

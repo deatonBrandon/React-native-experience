@@ -14,12 +14,12 @@ const Home = () => {
 
   const { data: posts, refetch } = useAppwrite(getAllPosts)
   const { data: latestVideos } = useAppwrite(getLatestVideos)
-  const { user, setUser, setIsLoggedIn } = useGlobalContext();
+  const { user } = useGlobalContext();
   const [isRefreshing, setIsRefreshing] = useState(false)
 
   const onRefresh = async () => {
     setIsRefreshing(true);
-    //recall videos if any new videos were submitted
+    //recall videos
     await refetch();
     setIsRefreshing(false);
   }
@@ -63,7 +63,7 @@ const Home = () => {
       )}
 
       refreshControl={<RefreshControl refreshing={isRefreshing} onRefresh={onRefresh} />}
-      />
+    />
     </SafeAreaView>
   )
 }
