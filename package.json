@@ -17,11 +17,7 @@
   "dependencies": {
     "@expo/vector-icons": "^14.0.0",
     "@react-navigation/native": "^6.0.2",
-<<<<<<< HEAD
-    "expo": "~51.0.14",
-=======
     "expo": "^51.0.0",
->>>>>>> 3e094cbc227c51793a18b025b3a694a05e9e4fb2
     "expo-av": "^14.0.5",
     "expo-constants": "~16.0.2",
     "expo-document-picker": "~12.0.2",
